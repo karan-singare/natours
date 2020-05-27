@@ -69,7 +69,7 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem; }
+  padding: 1rem; }
   @media (max-width: 56.25em) {
     body {
       padding: 0; } }
@@ -169,6 +169,57 @@ body {
 
 .u-margin-top-big {
   margin-top: 8rem !important; }
+
+.preloader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #34495e;
+  overflow: hidden; }
+
+.preloader {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border-top: 10px solid #e74c3c;
+  position: absolute;
+  animation: rotate 2s linear infinite;
+  margin: 0 auto; }
+  .preloader::after, .preloader::before {
+    content: "";
+    width: 12rem;
+    height: 12rem;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    box-sizing: border-box;
+    border-radius: 50%; }
+  .preloader::before {
+    border-top: 10px solid #e67e22;
+    transform: rotate(120deg); }
+  .preloader::after {
+    border-top: 10px solid #3498db;
+    transform: rotate(240deg); }
+  .preloader span {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    text-align: center;
+    line-height: 12rem;
+    color: #fff;
+    animation: rotate_reverse 2s linear infinite; }
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes rotate_reverse {
+  to {
+    transform: rotate(-360deg); } }
 
 .btn {
   /*when button is clicked*/
